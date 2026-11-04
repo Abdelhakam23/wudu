@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Backgrounds: Warm Ivory #FAF9F5 & Pure White #FFFFFF */
+    --background: 45 33% 97%;
+    --foreground: 153 17% 18%; /* #25342D */
+
+    --card: 0 0% 100%;
+    --card-foreground: 153 17% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 153 17% 18%;
+
+    /* Primary: Deep Forest Green #174D3B */
+    --primary: 161 54% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 160 51% 31%; /* Emerald #26745A */
+    --primary-light: 133 24% 92%; /* Soft Sage #E7F0E9 */
+
+    /* Secondary: Soft Sand #F1EEE6 */
+    --secondary: 43 27% 93%;
+    --secondary-foreground: 153 17% 18%;
+
+    /* Muted Text & Elements: #929A94 */
+    --muted: 43 20% 92%;
+    --muted-foreground: 150 4% 59%;
+
+    /* Accent: Muted Gold #B99A5B */
+    --accent: 40 41% 54%;
+    --accent-foreground: 153 17% 18%;
+    --accent-light: 41 54% 82%;
+
+    /* Semantic */
+    --destructive: 6 64% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 43 20% 88%;
+    --input: 43 20% 88%;
+    --ring: 161 54% 20%;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+    text-align: right;
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-ibm-plex-sans-arabic), system-ui, -apple-system, sans-serif;
+    line-height: 1.8;
+  }
+
+  /* Traditional Arabic Sacred Text (Hadith / Quran / Dhikr) */
+  .font-traditional {
+    font-family: var(--font-noto-naskh-arabic), serif;
+    line-height: 2.1;
+  }
+}
+
+/* Subtle decorative Islamic geometric pattern overlay */
+.islamic-pattern {
+  background-color: #FAF9F5;
+  background-image: radial-gradient(#174D3B 0.65px, transparent 0.65px), radial-gradient(#B99A5B 0.65px, #FAF9F5 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  background-opacity: 0.03;
+}
