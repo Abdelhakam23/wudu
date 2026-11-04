@@ -1,55 +1,32 @@
-# ARCHITECTURE.md — System Architecture & Patterns
+# Architecture
 
-## 1. Architectural Layers
+## Runtime flow
 
-The application strictly separates responsibilities into well-defined layers:
-
-```
-┌────────────────────────────────────────────────────────┐
-│             Presentation Layer (Next.js App)           │
-│  - Server Components (RSC) by default                  │
-│  - Interactive Client Components where necessary       │
-│  - Shadcn UI & Atomic Components                       │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│                    API / Route Handlers                │
-│  - HTTP Request Parsing & Zod Schema Validation        │
-│  - Standardized JSON responses & Error mapping         │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│                      Service Layer                     │
-│  - Business logic, Arabic normalization, verification  │
-│  - DTO transformations (lean models -> clean DTOs)     │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│                    Repository Layer                    │
-│  - Direct database queries, Mongoose projection, leans │
-│  - Pagination, sorting, indexing                       │
-└───────────────────────────┬────────────────────────────┘
-                            │
-┌───────────────────────────▼────────────────────────────┐
-│                Database / Infrastructure               │
-│  - MongoDB (Mongoose connection pool & schemas)        │
-└────────────────────────────────────────────────────────┘
+```text
+Next.js Server Components and Client Components
+              |
+       Route Handlers
+              |
+           Services
+              |
+     Verified TypeScript content
 ```
 
-## 2. Directory Layout
-- `src/app`: App Router pages and Route Handlers.
-- `src/components`: UI components (`ui/`, `layout/`, `shared/`).
-- `src/features`: Domain-specific components (`wudu/`, `salah/`, `hadiths/`, `search/`).
-- `src/models`: Mongoose schemas and model definitions.
-- `src/repositories`: Repository classes encapsulating DB queries.
-- `src/services`: Business logic and external API integrations.
-- `src/validations`: Zod validation schemas.
-- `src/types`: TypeScript interfaces, DTOs, and domain types.
-- `src/lib`: MongoDB connection, security utilities, Arabic normalizer, logger.
-- `src/constants`: Fixed configuration, navigation links, educational classifications.
+## Principles
 
-## 3. Core Architectural Rules
-1. **No Direct Model Access in UI**: UI components MUST NOT import Mongoose models or query the database directly.
-2. **Lean & Projected Queries**: Read operations must use `.lean()` and project only required fields to minimize memory footprint.
-3. **Fail-Safe Connection**: Database connection is cached across serverless lambdas with graceful reconnects.
-4. **Resilient Public API**: Public views handle empty database states, connection delays, and missing assets without white-screens or runtime crashes.
+- Server Components are the default.
+- Client Components are limited to browser interactions such as navigation and search.
+- Services own content selection, filtering, normalization, and pagination.
+- UI components never access infrastructure directly.
+- API handlers validate input with Zod and return standardized responses.
+- Religious content remains local, reviewed, and source-attributed.
+- No database, authentication, admin area, or external API credentials are part of the current release.
+
+## Main directories
+
+- `src/app`: pages, metadata, sitemap, robots, and route handlers.
+- `src/components`: shared layout and UI primitives.
+- `src/features`: Wudu, Salah, Hadith, and search experiences.
+- `src/lib/seed`: verified educational content.
+- `src/services`: content and search business logic.
+- `src/types`: domain DTOs and API types.

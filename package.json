@@ -12,8 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "seed": "tsx scripts/seed.ts"
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -27,7 +26,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.475.0",
-    "mongoose": "^8.10.1",
     "next": "^14.2.24",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

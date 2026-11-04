@@ -104,8 +104,8 @@ export default async function WuduPage() {
             <CardContent className="space-y-4 leading-8 text-foreground/75">
               <p>{lesson.introduction}</p>
               <p>
-                الوضوء عبادة وطهارة شرعها الله قبل الصلاة، وقد بيّنت آية
-                الوضوء في سورة المائدة الأعضاء التي يُعتنى بها في الطهارة.
+                الوضوء عبادة وطهارة شرعها الله قبل الصلاة، وقد بيّنت آية الوضوء
+                في سورة المائدة الأعضاء التي يُعتنى بها في الطهارة.
               </p>
             </CardContent>
           </Card>
@@ -126,8 +126,8 @@ export default async function WuduPage() {
                 ))}
               </ul>
               <p className="mt-4 text-xs leading-6 text-foreground/60">
-                هذه خلاصة تعليمية، وقد تختلف بعض تفاصيل الفقه بين المذاهب؛
-                فاسأل أهل العلم عند الحاجة.
+                هذه خلاصة تعليمية، وقد تختلف بعض تفاصيل الفقه بين المذاهب؛ فاسأل
+                أهل العلم عند الحاجة.
               </p>
             </CardContent>
           </Card>
@@ -142,7 +142,10 @@ export default async function WuduPage() {
             </CardHeader>
             <CardContent className="space-y-5">
               {hadithResult.data.map((hadith) => (
-                <article key={hadith.id} className="border-b border-border/70 pb-5 last:border-0 last:pb-0">
+                <article
+                  key={hadith.id}
+                  className="border-b border-border/70 pb-5 last:border-0 last:pb-0"
+                >
                   <p className="font-traditional text-lg leading-9 text-foreground">
                     {hadith.arabicText}
                   </p>

@@ -7,13 +7,13 @@ Build a production-ready, highly authentic Arabic Islamic educational platform d
 1. **Religious Accuracy First**: Never fabricate, alter, or guess Quranic verses, Hadith texts, narrators, or gradings. Everything must come from verified sources.
 2. **Strict Phase-by-Phase Execution**: Never advance to the next phase until all tasks and tests of the current phase are verified and passing.
 3. **Arabic RTL UI/UX**: Designed from the ground up for Arabic RTL readability, supporting all age groups with warm, dignified Islamic aesthetics.
-4. **Clean Layered Architecture**: Strictly adhere to the Service Layer + Repository Pattern. No MongoDB calls in UI components.
+4. **Clean Layered Architecture**: Strictly adhere to the Service Layer pattern. No infrastructure or content storage calls in UI components.
 5. **Type Safety & Strict Validation**: TypeScript strict mode enabled throughout. Zod schemas for all API inputs and mutations.
 6. **No Broken Links or Placeholders**: Never render dead links, non-functional buttons, or misleading placeholders.
 
 ## Technical Rules
-- **Stack**: Next.js (App Router), React, TypeScript (strict), Tailwind CSS, Mongoose / MongoDB, Framer Motion, Lucide React, Vitest.
-- **MongoDB Only**: Do NOT introduce PostgreSQL, Prisma, Firebase, or Supabase.
+- **Stack**: Next.js (App Router), React, TypeScript (strict), Tailwind CSS, Framer Motion, Lucide React, Vitest.
+- **Content storage**: Verified TypeScript seed data is the only content source for the current release. Do not add a database or authentication system without an explicit product requirement.
 - **Components**: Prefer Server Components by default; use `"use client"` only when interactivity, hooks, or browser events require it.
 - **State Management & UI**: Handle loading, empty, error, not-found, and offline states gracefully on every view.
 - **Testing**: Unit tests for utilities and logic, integration tests for repositories and APIs, E2E tests for core flows.

@@ -1,20 +1,10 @@
-import {
-  SearchRepository,
-  SearchResultItem,
-  SearchResultPage,
-} from "@/repositories/search.repository";
+import { SearchResultItem, SearchResultPage } from "@/types";
 import { normalizeArabicText } from "@/lib/utils";
 import { wuduLessonData } from "@/lib/seed/wudu-data";
 import { salahLessonData } from "@/lib/seed/salah-data";
 import { hadithsData } from "@/lib/seed/hadith-data";
 
 export class SearchService {
-  private repository: SearchRepository;
-
-  constructor() {
-    this.repository = new SearchRepository();
-  }
-
   /**
    * Performs Arabic-normalized search across the platform
    */
@@ -30,16 +20,6 @@ export class SearchService {
 
     const normalized = normalizeArabicText(query);
 
-    try {
-      const results = await this.repository.search(normalized, category);
-      if (results.length > 0) {
-        return this.paginate(results, page, limit);
-      }
-    } catch {
-      // Fallback to local memory search
-    }
-
-    // Local in-memory search over verified seed datasets
     const results: SearchResultItem[] = [];
 
     // Search Wudu Steps

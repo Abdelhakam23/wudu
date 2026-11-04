@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { SearchPagination } from "@/features/search/search-pagination";
 import { SearchResultCard } from "@/features/search/search-result-card";
 import type { ApiResponse } from "@/types";
-import type { SearchResultItem } from "@/repositories/search.repository";
+import type { SearchResultItem } from "@/types";
 
 const suggestions = ["الوضوء", "الصلاة", "الركوع", "الفاتحة", "الطهارة"];
 

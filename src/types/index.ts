@@ -3,7 +3,6 @@ export type LessonStatus = "draft" | "published";
 export type StepClassification = "obligatory" | "sunnah" | "recommended" | "educational";
 export type HadithTopic = "wudu" | "salah" | "general_purification";
 export type VerificationStatus = "verified" | "pending_review";
-export type AdminRole = "super_admin" | "editor";
 
 export interface IReference {
   title: string;
@@ -61,6 +60,41 @@ export interface IHadith {
   verificationStatus: VerificationStatus;
   createdAt?: string;
   updatedAt?: string;
+}
+
+export interface HadithFilterOptions {
+  q?: string;
+  topic?: HadithTopic | "all";
+  collection?: string;
+  grading?: string;
+  page?: number;
+  limit?: number;
+}
+
+export interface PaginatedResult<T> {
+  data: T[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+}
+
+export interface SearchResultItem {
+  id: string;
+  type: "wudu" | "salah" | "hadith";
+  title: string;
+  snippet: string;
+  url: string;
+  categoryName: string;
+  badge?: string;
+}
+
+export interface SearchResultPage {
+  data: SearchResultItem[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
 }
 
 export interface ICategory {

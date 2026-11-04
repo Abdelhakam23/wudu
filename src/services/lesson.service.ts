@@ -1,35 +1,12 @@
-import { LessonRepository } from "@/repositories/lesson.repository";
 import { ILesson, ILessonStep, LessonCategory } from "@/types";
 import { wuduLessonData } from "@/lib/seed/wudu-data";
 import { salahLessonData } from "@/lib/seed/salah-data";
 
 export class LessonService {
-  private repository: LessonRepository;
-
-  constructor() {
-    this.repository = new LessonRepository();
-  }
-
   /**
    * Get all published lessons with step counts
    */
   async getPublishedLessons(category?: LessonCategory): Promise<ILesson[]> {
-    try {
-      const lessons = await this.repository.findPublishedLessons(category);
-      if (lessons.length > 0) {
-        // Attach step count to each lesson
-        return await Promise.all(
-          lessons.map(async (lesson) => {
-            const count = await this.repository.countStepsInLesson(lesson.id);
-            return { ...lesson, stepsCount: count };
-          })
-        );
-      }
-    } catch (error) {
-      console.warn("Database lookup returned error or was unavailable, using verified seed data:", error);
-    }
-
-    // Fallback to verified seed data
     const seedLessons: ILesson[] = [
       {
         id: "wudu-lesson-default",
@@ -70,32 +47,6 @@ export class LessonService {
     lesson: ILesson | null;
     steps: ILessonStep[];
   }> {
-    try {
-      let lesson = await this.repository.findLessonBySlug(slugOrCategory);
-
-      if (!lesson && (slugOrCategory === "wudu" || slugOrCategory === "salah")) {
-        const lessons = await this.repository.findPublishedLessons(
-          slugOrCategory as LessonCategory
-        );
-        if (lessons.length > 0) {
-          lesson = lessons[0];
-        }
-      }
-
-      if (lesson) {
-        const steps = await this.repository.findStepsByLessonId(lesson.id);
-        if (steps.length > 0) {
-          return {
-            lesson: { ...lesson, stepsCount: steps.length },
-            steps,
-          };
-        }
-      }
-    } catch (error) {
-      console.warn(`Database lookup failed for [${slugOrCategory}], using verified seed data:`, error);
-    }
-
-    // Fallback to verified seed data
     if (slugOrCategory === "wudu" || slugOrCategory === "complete-wudu-guide") {
       const steps: ILessonStep[] = wuduLessonData.steps.map((s, idx) => ({
         ...s,
@@ -149,14 +100,6 @@ export class LessonService {
    * Get step by ID
    */
   async getStepById(id: string): Promise<ILessonStep | null> {
-    try {
-      const step = await this.repository.findStepById(id);
-      if (step) return step;
-    } catch {
-      // ignore
-    }
-
-    // Check seed steps
     const allSeedSteps = [
       ...wuduLessonData.steps.map((s, idx) => ({
         ...s,

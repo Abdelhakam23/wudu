@@ -1,37 +1,13 @@
-import {
-  HadithRepository,
-  HadithFilterOptions,
-  PaginatedResult,
-} from "@/repositories/hadith.repository";
-import { IHadith } from "@/types";
+import { HadithFilterOptions, IHadith, PaginatedResult } from "@/types";
 import { hadithsData } from "@/lib/seed/hadith-data";
 
 export class HadithService {
-  private repository: HadithRepository;
-
-  constructor() {
-    this.repository = new HadithRepository();
-  }
-
   /**
    * Get verified Hadiths with filtering & pagination
    */
   async getVerifiedHadiths(
     options: HadithFilterOptions = {}
   ): Promise<PaginatedResult<IHadith>> {
-    try {
-      const result = await this.repository.findHadiths({
-        ...options,
-        verificationStatus: "verified",
-      });
-      if (result.data.length > 0) {
-        return result;
-      }
-    } catch (error) {
-      console.warn("Database lookup failed for hadiths, using verified seed data:", error);
-    }
-
-    // Fallback to verified seed data
     const page = options.page || 1;
     const limit = options.limit || 10;
     const topic = options.topic || "all";
@@ -77,15 +53,6 @@ export class HadithService {
    * Get a single verified Hadith by ID
    */
   async getHadithById(id: string): Promise<IHadith | null> {
-    try {
-      const hadith = await this.repository.findHadithById(id);
-      if (hadith && hadith.verificationStatus === "verified") {
-        return hadith;
-      }
-    } catch {
-      // ignore
-    }
-
     const seed = hadithsData.map((h, idx) => ({
       ...h,
       id: `hadith-${idx + 1}`,
@@ -98,13 +65,6 @@ export class HadithService {
    * Get featured Hadith for homepage showcase
    */
   async getFeaturedHadith(): Promise<IHadith | null> {
-    try {
-      const hadith = await this.repository.getFeaturedHadith();
-      if (hadith) return hadith;
-    } catch {
-      // ignore
-    }
-
     const first = hadithsData[0];
     return first ? { ...first, id: "hadith-1" } : null;
   }

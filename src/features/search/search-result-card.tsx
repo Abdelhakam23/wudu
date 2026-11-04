@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import type { SearchResultItem } from "@/repositories/search.repository";
+import type { SearchResultItem } from "@/types";
 
 function HighlightedText({ text, query }: { text: string; query: string }) {
   if (!query.trim()) return <>{text}</>;

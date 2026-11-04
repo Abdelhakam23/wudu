@@ -36,7 +36,6 @@
 - **Framework**: Next.js 14+ (App Router)
 - **Language**: TypeScript (Strict Mode)
 - **Styling**: Tailwind CSS + shadcn/ui design tokens
-- **Database**: MongoDB with Mongoose ODM
-- **Patterns**: Repository Pattern + Service Layer + DTOs
+- **Content storage**: Verified TypeScript seed data with Service Layer + DTOs
 - **Validation**: Zod + React Hook Form
 - **Testing**: Vitest + React Testing Library

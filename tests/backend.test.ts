@@ -11,12 +11,12 @@ import { successResponse, errorResponse } from "../src/lib/api-response";
 import { checkPublicRateLimit } from "../src/lib/security";
 
 describe("Validation Schemas", () => {
-  it("validates valid MongoDB ObjectId", () => {
+  it("validates a valid object identifier", () => {
     const validId = "507f1f77bcf86cd799439011";
     expect(objectIdSchema.safeParse(validId).success).toBe(true);
   });
 
-  it("rejects invalid MongoDB ObjectId", () => {
+  it("rejects an invalid object identifier", () => {
     const invalidId = "123-not-an-id";
     expect(objectIdSchema.safeParse(invalidId).success).toBe(false);
   });
