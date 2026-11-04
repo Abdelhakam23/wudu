@@ -41,6 +41,15 @@ export class HadithService {
       id: `hadith-${idx + 1}`,
     }));
 
+    if (options.q) {
+      const query = options.q.trim().toLocaleLowerCase("ar");
+      filtered = filtered.filter((h) =>
+        [h.arabicText, h.narrator, h.explanation]
+          .filter(Boolean)
+          .some((value) => value.toLocaleLowerCase("ar").includes(query))
+      );
+    }
+
     if (topic && topic !== "all") {
       filtered = filtered.filter((h) => h.topic === topic);
     }

@@ -13,6 +13,14 @@ export interface SearchResultItem {
   badge?: string;
 }
 
+export interface SearchResultPage {
+  data: SearchResultItem[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+}
+
 export class SearchRepository {
   /**
    * Search across lessons, steps, and hadiths with regex safety and category limits

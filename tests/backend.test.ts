@@ -1,10 +1,14 @@
 import { describe, it, expect } from "vitest";
 import {
   objectIdSchema,
+  hadithIdSchema,
   searchQuerySchema,
   hadithFilterSchema,
+  lessonCategorySchema,
+  lessonSlugSchema,
 } from "../src/lib/validations";
 import { successResponse, errorResponse } from "../src/lib/api-response";
+import { checkPublicRateLimit } from "../src/lib/security";
 
 describe("Validation Schemas", () => {
   it("validates valid MongoDB ObjectId", () => {
@@ -15,6 +19,11 @@ describe("Validation Schemas", () => {
   it("rejects invalid MongoDB ObjectId", () => {
     const invalidId = "123-not-an-id";
     expect(objectIdSchema.safeParse(invalidId).success).toBe(false);
+  });
+
+  it("accepts verified seed Hadith identifiers", () => {
+    expect(hadithIdSchema.safeParse("hadith-1").success).toBe(true);
+    expect(hadithIdSchema.safeParse("hadith-nope").success).toBe(false);
   });
 
   it("validates search query within valid length and category", () => {
@@ -38,6 +47,19 @@ describe("Validation Schemas", () => {
       expect(parsed.data.page).toBe(1);
       expect(parsed.data.limit).toBe(10);
     }
+  });
+
+  it("validates lesson categories and safe slugs", () => {
+    expect(lessonCategorySchema.safeParse("wudu").success).toBe(true);
+    expect(lessonCategorySchema.safeParse("admin").success).toBe(false);
+    expect(lessonSlugSchema.safeParse("complete-wudu-guide").success).toBe(true);
+    expect(lessonSlugSchema.safeParse("../admin").success).toBe(false);
+  });
+
+  it("limits repeated public requests", () => {
+    const key = `test-rate-limit-${Date.now()}`;
+    expect(checkPublicRateLimit(key, 1, 60_000).allowed).toBe(true);
+    expect(checkPublicRateLimit(key, 1, 60_000).allowed).toBe(false);
   });
 });
 

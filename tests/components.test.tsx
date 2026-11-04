@@ -7,6 +7,10 @@ import { EmptyState } from "../src/components/shared/empty-state";
 import { ErrorState } from "../src/components/shared/error-state";
 import { SectionHeading } from "../src/components/shared/section-heading";
 import { Breadcrumb } from "../src/components/shared/breadcrumb";
+import { WuduProgress } from "../src/features/wudu/wudu-progress";
+import { WuduStepNavigation } from "../src/features/wudu/wudu-step-navigation";
+import { SalahProgress } from "../src/features/salah/salah-progress";
+import { SalahStepNavigation } from "../src/features/salah/salah-step-navigation";
 
 describe("Shared UI Components", () => {
   it("renders Button correctly with children", () => {
@@ -68,5 +72,54 @@ describe("Shared UI Components", () => {
     );
     expect(screen.getByText("تعلم الوضوء")).toBeInTheDocument();
     expect(screen.getByText("غسل اليدين")).toBeInTheDocument();
+  });
+
+  it("renders Wudu progress with the current step", () => {
+    render(<WuduProgress currentStep={3} totalSteps={10} />);
+    expect(screen.getByText("3 من 10")).toBeInTheDocument();
+    expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "3");
+  });
+
+  it("disables navigation at the first and last steps", () => {
+    const { rerender } = render(
+      <WuduStepNavigation
+        isFirstStep
+        isLastStep={false}
+        onPrevious={() => {}}
+        onNext={() => {}}
+      />
+    );
+    expect(screen.getByRole("button", { name: "الخطوة السابقة" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "الخطوة التالية" })).toBeEnabled();
+
+    rerender(
+      <WuduStepNavigation
+        isFirstStep={false}
+        isLastStep
+        onPrevious={() => {}}
+        onNext={() => {}}
+      />
+    );
+    expect(screen.getByRole("button", { name: "الخطوة السابقة" })).toBeEnabled();
+    expect(screen.getByRole("button", { name: "الخطوة التالية" })).toBeDisabled();
+  });
+
+  it("renders Salah progress and guards prayer navigation boundaries", () => {
+    const { rerender } = render(
+      <SalahProgress currentStep={2} totalSteps={11} />
+    );
+    expect(screen.getByText("2 من 11")).toBeInTheDocument();
+    expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "2");
+
+    rerender(
+      <SalahStepNavigation
+        isFirstStep
+        isLastStep={false}
+        onPrevious={() => {}}
+        onNext={() => {}}
+      />
+    );
+    expect(screen.getByRole("button", { name: "موضع الصلاة السابق" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "موضع الصلاة التالي" })).toBeEnabled();
   });
 });

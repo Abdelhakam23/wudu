@@ -2,13 +2,24 @@ import { NextRequest } from "next/server";
 import { hadithService } from "@/services/hadith.service";
 import { successResponse, errorResponse } from "@/lib/api-response";
 import { hadithFilterSchema } from "@/lib/validations";
+import { checkPublicRateLimit, getClientAddress } from "@/lib/security";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   try {
+    const rateLimit = checkPublicRateLimit(`hadiths:${getClientAddress(request)}`);
+    if (!rateLimit.allowed) {
+      return errorResponse(
+        "تم تجاوز حد الطلبات، يرجى المحاولة بعد قليل",
+        "RATE_LIMITED",
+        429,
+        { retryAfterSeconds: rateLimit.retryAfterSeconds }
+      );
+    }
     const { searchParams } = new URL(request.url);
     const rawParams = {
+      q: searchParams.get("q") || undefined,
       topic: searchParams.get("topic") || "all",
       collection: searchParams.get("collection") || undefined,
       grading: searchParams.get("grading") || undefined,

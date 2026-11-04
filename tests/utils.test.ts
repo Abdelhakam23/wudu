@@ -15,6 +15,10 @@ describe("Arabic Text Normalization Utility", () => {
     expect(normalizeArabicText(input)).toBe(expected);
   });
 
+  it("should normalize common Arabic spelling variations", () => {
+    expect(normalizeArabicText("إِيمَانٌ وآيةٌ")).toBe("ايمان وايه");
+  });
+
   it("should convert numbers to Arabic Eastern numerals", () => {
     expect(toArabicDigits(123)).toBe("١٢٣");
   });

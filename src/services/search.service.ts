@@ -1,4 +1,8 @@
-import { SearchRepository, SearchResultItem } from "@/repositories/search.repository";
+import {
+  SearchRepository,
+  SearchResultItem,
+  SearchResultPage,
+} from "@/repositories/search.repository";
 import { normalizeArabicText } from "@/lib/utils";
 import { wuduLessonData } from "@/lib/seed/wudu-data";
 import { salahLessonData } from "@/lib/seed/salah-data";
@@ -14,9 +18,14 @@ export class SearchService {
   /**
    * Performs Arabic-normalized search across the platform
    */
-  async search(query: string, category: string = "all"): Promise<SearchResultItem[]> {
+  async search(
+    query: string,
+    category: string = "all",
+    page = 1,
+    limit = 10
+  ): Promise<SearchResultPage> {
     if (!query || query.trim().length === 0) {
-      return [];
+      return { data: [], total: 0, page: 1, limit, totalPages: 0 };
     }
 
     const normalized = normalizeArabicText(query);
@@ -24,7 +33,7 @@ export class SearchService {
     try {
       const results = await this.repository.search(normalized, category);
       if (results.length > 0) {
-        return results;
+        return this.paginate(results, page, limit);
       }
     } catch {
       // Fallback to local memory search
@@ -130,7 +139,30 @@ export class SearchService {
       }
     }
 
-    return results;
+    results.sort((a, b) => {
+      const aExact = normalizeArabicText(a.title) === normalized ? 1 : 0;
+      const bExact = normalizeArabicText(b.title) === normalized ? 1 : 0;
+      return bExact - aExact;
+    });
+
+    return this.paginate(results, page, limit);
+  }
+
+  private paginate(
+    results: SearchResultItem[],
+    page: number,
+    limit: number
+  ): SearchResultPage {
+    const safePage = Math.max(1, page);
+    const safeLimit = Math.min(50, Math.max(1, limit));
+    const start = (safePage - 1) * safeLimit;
+    return {
+      data: results.slice(start, start + safeLimit),
+      total: results.length,
+      page: safePage,
+      limit: safeLimit,
+      totalPages: Math.ceil(results.length / safeLimit),
+    };
   }
 }
 

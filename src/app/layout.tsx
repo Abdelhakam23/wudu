@@ -30,6 +30,22 @@ export const metadata: Metadata = {
     "خطوات الوضوء",
     "أركان الصلاة",
   ],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ar_AR",
+    title: "منصة تعليم الوضوء والصلاة",
+    description: "تعلم الوضوء والصلاة خطوة بخطوة بمحتوى عربي موثق.",
+    siteName: "منصة تعليم الوضوء والصلاة",
+  },
+  twitter: {
+    card: "summary",
+    title: "منصة تعليم الوضوء والصلاة",
+    description: "تعلم الوضوء والصلاة خطوة بخطوة بمحتوى عربي موثق.",
+  },
 };
 
 export default function RootLayout({

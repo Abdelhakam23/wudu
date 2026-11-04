@@ -3,6 +3,7 @@ import { Hadith, IHadithSchema } from "@/models";
 import { IHadith, HadithTopic, VerificationStatus } from "@/types";
 
 export interface HadithFilterOptions {
+  q?: string;
   topic?: HadithTopic | "all";
   collection?: string;
   grading?: string;
@@ -46,6 +47,7 @@ export class HadithRepository {
     await connectToDatabase();
 
     const {
+      q,
       topic = "all",
       collection,
       grading,
@@ -56,17 +58,28 @@ export class HadithRepository {
 
     const query: {
       verificationStatus: VerificationStatus;
+      $or?: Array<Record<string, { $regex: string; $options: string }>>;
       topic?: HadithTopic;
       collection?: { $regex: string; $options: string };
       grading?: string;
     } = { verificationStatus };
+
+    if (q) {
+      const escapedQuery = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      query.$or = [
+        { arabicText: { $regex: escapedQuery, $options: "i" } },
+        { narrator: { $regex: escapedQuery, $options: "i" } },
+        { explanation: { $regex: escapedQuery, $options: "i" } },
+      ];
+    }
 
     if (topic && topic !== "all") {
       query.topic = topic;
     }
 
     if (collection) {
-      query.collection = { $regex: collection, $options: "i" };
+      const escapedCollection = collection.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      query.collection = { $regex: escapedCollection, $options: "i" };
     }
 
     if (grading) {

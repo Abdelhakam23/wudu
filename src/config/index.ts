@@ -13,7 +13,18 @@ const envSchema = z.object({
   DORAR_API_KEY: z.string().optional(),
 });
 
-export const env = envSchema.parse({
+export const env = envSchema.superRefine((values, context) => {
+  if (
+    values.NODE_ENV === "production" &&
+    values.ADMIN_JWT_SECRET.includes("dev_secret_key_for_local_testing_only")
+  ) {
+    context.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["ADMIN_JWT_SECRET"],
+      message: "ADMIN_JWT_SECRET must be replaced with a production secret",
+    });
+  }
+}).parse({
   NODE_ENV: process.env.NODE_ENV,
   PORT: process.env.PORT,
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,

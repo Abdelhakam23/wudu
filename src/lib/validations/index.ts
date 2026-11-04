@@ -4,6 +4,11 @@ export const objectIdSchema = z
   .string()
   .regex(/^[0-9a-fA-F]{24}$/, "معرف غير صالح");
 
+export const hadithIdSchema = z.union([
+  objectIdSchema,
+  z.string().regex(/^hadith-\d+$/, "معرف الحديث غير صالح"),
+]);
+
 export const searchQuerySchema = z.object({
   q: z
     .string()
@@ -15,6 +20,7 @@ export const searchQuerySchema = z.object({
 });
 
 export const hadithFilterSchema = z.object({
+  q: z.string().max(100, "كلمة البحث طويلة للغاية").optional(),
   topic: z.enum(["all", "wudu", "salah", "general_purification"]).default("all"),
   collection: z.string().optional(),
   grading: z.string().optional(),
@@ -26,3 +32,9 @@ export const lessonFilterSchema = z.object({
   category: z.enum(["all", "wudu", "salah"]).default("all"),
   status: z.enum(["published", "draft"]).default("published"),
 });
+
+export const lessonCategorySchema = z.enum(["wudu", "salah"]);
+export const lessonSlugSchema = z
+  .string()
+  .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "معرف الدرس غير صالح")
+  .max(100);

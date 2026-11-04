@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { lessonService } from "@/services/lesson.service";
 import { successResponse, errorResponse } from "@/lib/api-response";
+import { lessonCategorySchema, lessonSlugSchema } from "@/lib/validations";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,12 @@ export async function GET(
   try {
     const slug = params.slug;
     if (!slug) {
+      return errorResponse("معرف الدرس غير صالح", "INVALID_SLUG", 400);
+    }
+    if (
+      !lessonSlugSchema.safeParse(slug).success &&
+      !lessonCategorySchema.safeParse(slug).success
+    ) {
       return errorResponse("معرف الدرس غير صالح", "INVALID_SLUG", 400);
     }
 

@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { hadithService } from "@/services/hadith.service";
 import { successResponse, errorResponse } from "@/lib/api-response";
-import { objectIdSchema } from "@/lib/validations";
+import { hadithIdSchema } from "@/lib/validations";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +10,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const idValidation = objectIdSchema.safeParse(params.id);
+    const idValidation = hadithIdSchema.safeParse(params.id);
     if (!idValidation.success) {
       return errorResponse("معرف الحديث غير صالح", "INVALID_ID", 400);
     }
