@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Head Profile Diagram -->
+  <path d="M220 280 C235 240 240 210 245 170 C255 130 285 105 330 110 C375 115 400 150 395 195 C390 220 375 250 365 280" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round" fill="#F1EEE6"/>
+
+  <!-- Both hands placed at front hairline and sliding back to the nape, then returning -->
+  <ellipse cx="270" cy="125" rx="35" ry="18" transform="rotate(-20 270 125)" fill="#FFFFFF" stroke="#26745A" stroke-width="3.5"/>
+  <ellipse cx="370" cy="140" rx="35" ry="18" transform="rotate(30 370 140)" fill="#FFFFFF" stroke="#26745A" stroke-width="3.5" opacity="0.8"/>
+
+  <!-- Motion arrows: Front to Back, then Back to Front (ذهاباً وإياباً) -->
+  <!-- Arrow going back -->
+  <path d="M260 90 Q330 70 380 95" stroke="#26745A" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polygon points="380,95 372,88 373,98" fill="#26745A"/>
+  
+  <!-- Arrow returning to front -->
+  <path d="M375 170 Q325 155 270 170" stroke="#B99A5B" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polygon points="270,170 278,163 277,173" fill="#B99A5B"/>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">فرض / ركن</text>
+
+  <!-- Step Count Badge (مرة واحدة) -->
+  <rect x="420" y="60" width="85" height="32" rx="16" fill="#B99A5B"/>
+  <text x="462" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">مرة واحدة</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(210, 360)">
+    <rect width="180" height="38" rx="19" fill="#174D3B"/>
+    <text x="90" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الخطوة ٧: مسح الرأس</text>
+  </g>
+</svg>

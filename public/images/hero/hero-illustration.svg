@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="100%" height="100%" fill="none">
+  <!-- Subtle gradient background -->
+  <rect width="700" height="500" rx="32" fill="#FAF9F5"/>
+  <rect x="15" y="15" width="670" height="470" rx="24" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+
+  <!-- Islamic Mihrab Arch Shape -->
+  <path d="M150 440 L150 250 C150 140 250 80 350 80 C450 80 550 140 550 250 L550 440 Z" fill="#E7F0E9" opacity="0.6"/>
+  <path d="M180 440 L180 260 C180 170 260 115 350 115 C440 115 520 170 520 260 L520 440 Z" fill="#FFFFFF" stroke="#B99A5B" stroke-width="2.5" stroke-dasharray="6 4"/>
+
+  <!-- Inner Decorative Arch -->
+  <path d="M210 440 L210 270 C210 195 275 150 350 150 C425 150 490 195 490 270 L490 440 Z" fill="#174D3B" opacity="0.06"/>
+
+  <!-- Pure Water Source & Pitcher (Wudu Symbol) on the right -->
+  <g transform="translate(420, 260)">
+    <circle cx="50" cy="50" r="45" fill="#FAF9F5" stroke="#26745A" stroke-width="3"/>
+    <!-- Pitcher / Ewer -->
+    <path d="M38 75 C30 65 30 50 35 35 C40 25 50 20 55 20 C60 20 70 25 75 35 C80 50 80 65 72 75 Z" fill="#26745A" opacity="0.2"/>
+    <path d="M38 75 C30 65 30 50 35 35 C40 25 50 20 55 20 C60 20 70 25 75 35 C80 50 80 65 72 75 Z" stroke="#174D3B" stroke-width="3" fill="none"/>
+    <path d="M30 40 C15 45 15 65 35 70" stroke="#174D3B" stroke-width="2.5"/>
+    <path d="M72 40 C85 35 90 25 92 18" stroke="#174D3B" stroke-width="2.5"/>
+    <!-- Droplet -->
+    <circle cx="95" cy="35" r="3" fill="#26745A"/>
+    <circle cx="98" cy="48" r="2.5" fill="#26745A"/>
+    <text x="50" y="115" fill="#174D3B" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">الطهور شطر الإيمان</text>
+  </g>
+
+  <!-- Praying figure silhouette (Salah Symbol) on the left -->
+  <g transform="translate(180, 260)">
+    <circle cx="50" cy="50" r="45" fill="#FAF9F5" stroke="#174D3B" stroke-width="3"/>
+    <!-- Figure Bowing in Ruku / Prayer -->
+    <circle cx="35" cy="35" r="8" fill="#F1EEE6" stroke="#174D3B" stroke-width="2"/>
+    <path d="M42 37 L75 37 C80 37 85 45 80 75" stroke="#174D3B" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M55 40 L65 60" stroke="#174D3B" stroke-width="2.5"/>
+    <text x="50" y="115" fill="#174D3B" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">الصلاة عماد الدين</text>
+  </g>
+
+  <!-- Central Mosque Dome Motif & Crescent -->
+  <path d="M350 160 C320 200 310 240 310 270 L390 270 C390 240 380 200 350 160 Z" fill="#174D3B"/>
+  <circle cx="350" cy="140" r="7" fill="#B99A5B"/>
+  <path d="M348 126 C344 126 341 129 341 133 C341 137 344 140 348 140 C346 138 345 135 345 133 C345 130 347 128 348 126 Z" fill="#B99A5B"/>
+
+  <!-- Light Gold Quranic / Prophetic Calligraphy Ribbon -->
+  <g transform="translate(175, 410)">
+    <rect width="350" height="42" rx="21" fill="#FFFFFF" stroke="#B99A5B" stroke-width="1.5" filter="drop-shadow(0px 2px 4px rgba(23,77,59,0.06))"/>
+    <text x="175" y="27" fill="#174D3B" font-family="'Noto Naskh Arabic', serif" font-size="16" font-weight="bold" text-anchor="middle">«صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي»</text>
+  </g>
+</svg>

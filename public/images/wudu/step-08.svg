@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Detailed Ear Diagram with Finger Indications -->
+  <!-- Ear Outer Shape -->
+  <path d="M280 130 C330 120 370 160 365 210 C360 250 330 280 290 285 C265 288 250 270 255 250 C260 230 280 225 290 215 C305 200 300 170 275 160" stroke="#174D3B" stroke-width="5" stroke-linecap="round" fill="#F1EEE6"/>
+
+  <!-- Ear Inner Concha -->
+  <path d="M290 180 C320 185 325 215 310 235 C300 245 285 240 280 230" stroke="#26745A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Index finger (السبابة داخل الصماخ) -->
+  <ellipse cx="295" cy="210" rx="14" ry="24" transform="rotate(25 295 210)" fill="#FFFFFF" stroke="#174D3B" stroke-width="3"/>
+  <path d="M295 235 L330 310" stroke="#174D3B" stroke-width="4" stroke-linecap="round"/>
+  <text x="210" y="200" fill="#174D3B" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">السبابة بالداخل</text>
+  <path d="M245 205 L280 210" stroke="#174D3B" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Thumb (الإبهام على ظاهر الأذن) -->
+  <ellipse cx="370" cy="215" rx="16" ry="22" transform="rotate(-15 370 215)" fill="#FFFFFF" stroke="#B99A5B" stroke-width="3"/>
+  <path d="M375 235 L405 310" stroke="#B99A5B" stroke-width="4" stroke-linecap="round"/>
+  <text x="440" y="210" fill="#B99A5B" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">الإبهام بالظاهر</text>
+  <path d="M435 215 L390 215" stroke="#B99A5B" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Step Count Badge (مرة واحدة بماء الرأس) -->
+  <rect x="380" y="60" width="125" height="32" rx="16" fill="#B99A5B"/>
+  <text x="442" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">مرة واحدة بماء الرأس</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(210, 360)">
+    <rect width="180" height="38" rx="19" fill="#174D3B"/>
+    <text x="90" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الخطوة ٨: مسح الأذنين</text>
+  </g>
+</svg>

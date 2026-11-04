@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Motion arrow indicating rising up to straight posture -->
+  <path d="M210 240 Q215 160 260 140" stroke="#26745A" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polygon points="260,140 252,148 262,150" fill="#26745A"/>
+
+  <!-- Standing upright with straight spine (حتى يرجع كل عظم إلى موضعه) -->
+  <circle cx="300" cy="110" r="26" fill="#F1EEE6" stroke="#174D3B" stroke-width="4"/>
+  <path d="M265 170 L255 305 L345 305 L335 170 Z" fill="#F1EEE6" stroke="#174D3B" stroke-width="4.5" stroke-linejoin="round"/>
+  
+  <!-- Arms resting by side or folded on chest -->
+  <path d="M265 175 L255 250" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M335 175 L345 250" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Feet parallel -->
+  <path d="M275 305 L275 335 L260 335" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M325 305 L325 335 L340 335" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Dhikr Callout: سمع الله لمن حمده • ربنا ولك الحمد -->
+  <rect x="110" y="45" width="380" height="34" rx="17" fill="#174D3B"/>
+  <text x="300" y="68" fill="#FFFFFF" font-family="'Noto Naskh Arabic', serif" font-size="14" font-weight="bold" text-anchor="middle">«سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ • رَبَّنَا وَلَكَ الْحَمْدُ»</text>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">ركن من الأركان</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(170, 365)">
+    <rect width="260" height="38" rx="19" fill="#174D3B"/>
+    <text x="130" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الموضع ٤: الرفع من الركوع والاعتدال</text>
+  </g>
+</svg>

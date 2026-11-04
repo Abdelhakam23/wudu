@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <line x1="120" y1="295" x2="480" y2="295" stroke="#174D3B" stroke-width="3"/>
+
+  <!-- Sitting in Tawarruk position (التورّك في التشهد الأخير: ينصب اليمنى ويخرج اليسرى من تحته ويجلس بإليته على الأرض) -->
+  <circle cx="280" cy="130" r="24" fill="#F1EEE6" stroke="#174D3B" stroke-width="4"/>
+  <path d="M270 170 L255 270 C255 285 275 295 315 295 L365 295" stroke="#174D3B" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M255 270 L335 270 L340 295" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Right Hand with Index finger pointed throughout the supplication -->
+  <path d="M270 185 L320 240" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <ellipse cx="330" cy="245" rx="12" ry="8" fill="#FFFFFF" stroke="#26745A" stroke-width="3"/>
+  <path d="M338 243 L360 238" stroke="#26745A" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Tawarruk Callout Annotation -->
+  <rect x="360" y="270" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#B99A5B" stroke-width="1.5"/>
+  <text x="420" y="287" fill="#B99A5B" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">صفة التورّك</text>
+
+  <!-- Salawat Callout Banner -->
+  <rect x="80" y="45" width="440" height="34" rx="17" fill="#174D3B"/>
+  <text x="300" y="68" fill="#FFFFFF" font-family="'Noto Naskh Arabic', serif" font-size="14" font-weight="bold" text-anchor="middle">«اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ...»</text>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">ركن من الأركان</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(170, 365)">
+    <rect width="260" height="38" rx="19" fill="#174D3B"/>
+    <text x="130" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الموضع ١٠: التشهد الأخير والصلاة الإبراهيمية</text>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="210" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Profile representation of head & cupped hand with water to mouth -->
+  <!-- Clean outline profile of face -->
+  <path d="M260 120 C280 120 310 130 325 155 C335 170 338 185 332 200 C326 215 320 220 328 230 C335 240 330 255 315 265 C300 275 280 275 265 270" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Cupped Hand holding water towards mouth -->
+  <path d="M380 280 C360 260 340 250 315 245 C295 242 285 248 290 260 C295 270 310 275 330 280 C350 285 370 300 385 305" fill="#F1EEE6" stroke="#174D3B" stroke-width="4.5" stroke-linejoin="round"/>
+  
+  <!-- Pure Water Swirling at mouth and in cupped hand -->
+  <ellipse cx="320" cy="242" rx="18" ry="10" fill="#26745A" opacity="0.85"/>
+  <path d="M305 242 Q320 232 335 242 Q320 252 305 242 Z" fill="#FFFFFF" opacity="0.6"/>
+
+  <!-- Motion arrows indicating swirling water in mouth -->
+  <path d="M295 215 C295 205 315 205 315 215 C315 225 295 225 295 215" stroke="#26745A" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <polygon points="315,212 320,217 312,220" fill="#26745A"/>
+
+  <!-- Water droplets -->
+  <circle cx="345" cy="235" r="4" fill="#26745A"/>
+  <circle cx="355" cy="248" r="3" fill="#26745A"/>
+
+  <!-- Step Count Badge (٣ مرات) -->
+  <rect x="420" y="60" width="75" height="32" rx="16" fill="#B99A5B"/>
+  <text x="457" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">٣ مرات</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(225, 360)">
+    <rect width="150" height="38" rx="19" fill="#174D3B"/>
+    <text x="75" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الخطوة ٣: المضمضة</text>
+  </g>
+</svg>

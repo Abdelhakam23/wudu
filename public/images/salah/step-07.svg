@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Floor line -->
+  <line x1="100" y1="285" x2="500" y2="285" stroke="#174D3B" stroke-width="3"/>
+
+  <!-- Prostrating Figure in full Sujud -->
+  <circle cx="160" cy="265" r="20" fill="#F1EEE6" stroke="#174D3B" stroke-width="4"/>
+  <circle cx="155" cy="283" r="5" fill="#B99A5B"/>
+
+  <ellipse cx="205" cy="282" rx="16" ry="6" fill="#FFFFFF" stroke="#174D3B" stroke-width="3.5"/>
+  <path d="M165 255 L210 230 L205 280" stroke="#174D3B" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <path d="M180 250 C220 215 280 180 340 185 C390 190 410 220 400 260" stroke="#174D3B" stroke-width="5" stroke-linecap="round" fill="#F1EEE6"/>
+
+  <path d="M360 282 C350 282 345 270 345 255 L380 230" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="355" cy="283" r="5" fill="#B99A5B"/>
+
+  <path d="M400 260 L440 275 L445 285" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="445" cy="283" r="5" fill="#B99A5B"/>
+
+  <!-- Dhikr Banner: سبحان ربي الأعلى (٣ مرات) -->
+  <rect x="160" y="45" width="280" height="34" rx="17" fill="#174D3B"/>
+  <text x="300" y="68" fill="#FFFFFF" font-family="'Noto Naskh Arabic', serif" font-size="15" font-weight="bold" text-anchor="middle">«سُبْحَانَ رَبِّيَ الْأَعْلَى» (٣ مرات)</text>
+
+  <!-- Complete Rak'ah Badge -->
+  <rect x="420" y="60" width="85" height="32" rx="16" fill="#B99A5B"/>
+  <text x="462" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">تمام الركعة</text>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">ركن من الأركان</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(195, 365)">
+    <rect width="210" height="38" rx="19" fill="#174D3B"/>
+    <text x="105" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الموضع ٧: السجود الثاني</text>
+  </g>
+</svg>

@@ -4,9 +4,9 @@
 - [x] Phase 01 — Project Initialization & Configuration (COMPLETED)
 - [x] Phase 02 — Design System & Global UI Foundation (COMPLETED)
 - [x] Phase 03 — Database & Backend Architecture (COMPLETED)
-- [ ] Phase 04 — Islamic Educational Content & Seed Data (Next)
-- [ ] Phase 05 — Educational Illustrations & Media
-- [ ] Phase 06 — Homepage & Global Navigation
+- [x] Phase 04 — Islamic Educational Content & Seed Data (COMPLETED)
+- [x] Phase 05 — Educational Illustrations & Media (COMPLETED)
+- [ ] Phase 06 — Homepage & Global Navigation (Next)
 - [ ] Phase 07 — Wudu Learning Experience
 - [ ] Phase 08 — Salah Learning Experience
 - [ ] Phase 09 — Hadiths & External API Integration
@@ -19,24 +19,26 @@
 ## Detailed Task Breakdown
 
 ### PHASE 01 — PROJECT INITIALIZATION & CONFIGURATION
-- [x] 1.1 Project Setup complete with Next.js App Router, TypeScript strict, Tailwind, Lucide, Framer Motion, Mongoose, Zod, Vitest.
-- [x] 1.2 Project Structure created across layers.
-- [x] 1.3 Architecture and Design documentation created.
+- [x] Complete Next.js App Router, TypeScript strict mode, Tailwind CSS, shadcn/ui tokens, Lucide, Framer Motion, Mongoose, Zod, Vitest.
+- [x] Strict project architecture, directories, and documentation.
 
 ### PHASE 02 — DESIGN SYSTEM & GLOBAL UI FOUNDATION
-- [x] 2.1 Brand Identity & Design tokens defined.
-- [x] 2.2 Arabic Typography configured (IBM Plex Sans Arabic & Noto Naskh Arabic).
-- [x] 2.3 Global RTL configuration.
-- [x] 2.4 Complete suite of 18+ reusable and shared UI components.
-- [x] 2.5 Global Layout, Navbar with mobile drawer, Footer with references, and global states.
+- [x] Complete Arabic typography, colors, RTL layouts, 18+ reusable components, Navbar, and Footer.
 
 ### PHASE 03 — DATABASE & BACKEND ARCHITECTURE
-- [x] 3.1 MongoDB connection utility with caching and connection reuse.
-- [x] 3.2 Mongoose schemas and models (Lesson, LessonStep, Hadith, Category, Admin) with proper validation and indexes.
-- [x] 3.3 Layered Architecture implementation:
-  - [x] Repository Layer (`LessonRepository`, `HadithRepository`, `SearchRepository`)
-  - [x] Service Layer (`LessonService`, `HadithService`, `SearchService`)
-  - [x] Standardized API Responses & centralized error mapping
-  - [x] Zod validation schemas
-  - [x] Route handlers (`/api/lessons`, `/api/lessons/[slug]`, `/api/lessons/[slug]/steps`, `/api/steps/[id]`, `/api/hadiths`, `/api/hadiths/[id]`, `/api/search`, `/api/categories`)
-- [x] 3.4 Database optimization (lean queries, projection, compound indexes, pagination).
+- [x] Mongoose models, Repository Pattern, Service Layer, and validated REST API route handlers.
+
+### PHASE 04 — ISLAMIC EDUCATIONAL CONTENT & SEED DATA
+- [x] 4.1 Religious Content verified from Sahih al-Bukhari, Sahih Muslim, and authorized Sunan collections.
+- [x] 4.2 Comprehensive 10-step Wudu dataset with conditions, Fard vs. Sunnah classifications, and authentic Hadith references.
+- [x] 4.3 Comprehensive 11-step Salah dataset with conditions, 5 daily prayer rak'ah counts, full vocalized recitations (Tashkeel), and references.
+- [x] 4.4 Verified Hadith library with narrators, authentic collections, and gradings.
+- [x] 4.5 Idempotent seed runner (`src/lib/seed/runner.ts` & `scripts/seed.ts` via `npm run seed`).
+- [x] 4.6 Resilient in-memory fallback in service layer for instant availability.
+
+### PHASE 05 — EDUCATIONAL ILLUSTRATIONS & MEDIA
+- [x] 5.1 Consistent minimal 2D vector educational illustrations following dignified Islamic visual direction.
+- [x] 5.2 10 custom Wudu illustrations saved in `/public/images/wudu/step-01.svg` through `step-10.svg`.
+- [x] 5.3 11 custom Salah position illustrations saved in `/public/images/salah/step-01.svg` through `step-11.svg`.
+- [x] 5.4 Homepage Hero Islamic architectural illustration in `/public/images/hero/hero-illustration.svg`.
+- [x] 5.5 All visual assets tested and verified for existence and valid SVG structure.

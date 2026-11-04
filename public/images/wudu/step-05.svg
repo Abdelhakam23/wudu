@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Face Outline Frontal Respectful Diagram -->
+  <!-- Forehead hairline down to chin, ear to ear boundaries -->
+  <ellipse cx="300" cy="195" rx="75" ry="95" fill="#F1EEE6" stroke="#174D3B" stroke-width="4.5"/>
+  
+  <!-- Boundary lines highlighting face limits (حدود الوجه: من منابت الشعر إلى الذقن، ومن الأذن إلى الأذن) -->
+  <!-- Top hairline indicator -->
+  <path d="M235 140 Q300 115 365 140" stroke="#B99A5B" stroke-width="3" stroke-dasharray="5 4"/>
+  <!-- Bottom chin indicator -->
+  <path d="M250 280 Q300 305 350 280" stroke="#B99A5B" stroke-width="3" stroke-dasharray="5 4"/>
+  <!-- Ears -->
+  <path d="M225 180 C215 190 215 210 225 220" stroke="#174D3B" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M375 180 C385 190 385 210 375 220" stroke="#174D3B" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Two cupped hands bringing water to the entire face -->
+  <path d="M210 240 C210 220 230 200 245 225 C255 240 240 270 225 275 Z" fill="#FFFFFF" stroke="#26745A" stroke-width="3.5"/>
+  <path d="M390 240 C390 220 370 200 355 225 C345 240 360 270 375 275 Z" fill="#FFFFFF" stroke="#26745A" stroke-width="3.5"/>
+
+  <!-- Gentle water waves washing over the face -->
+  <path d="M260 160 Q300 175 340 160" stroke="#26745A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M250 195 Q300 210 350 195" stroke="#26745A" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M265 230 Q300 245 335 230" stroke="#26745A" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Water droplets dripping down -->
+  <circle cx="280" cy="275" r="4.5" fill="#26745A"/>
+  <circle cx="300" cy="285" r="5" fill="#26745A"/>
+  <circle cx="320" cy="275" r="4.5" fill="#26745A"/>
+
+  <!-- Obligatory Marker Badge (فرض / ركن) -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">فرض / ركن</text>
+
+  <!-- Step Count Badge (٣ مرات) -->
+  <rect x="420" y="60" width="75" height="32" rx="16" fill="#B99A5B"/>
+  <text x="457" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">٣ مرات</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(205, 360)">
+    <rect width="190" height="38" rx="19" fill="#174D3B"/>
+    <text x="95" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الخطوة ٥: غسل الوجه كاملاً</text>
+  </g>
+</svg>

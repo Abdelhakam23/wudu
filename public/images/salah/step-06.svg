@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Floor line -->
+  <line x1="120" y1="295" x2="480" y2="295" stroke="#174D3B" stroke-width="3"/>
+
+  <!-- Sitting Figure in Iftirash (الافتراش: يجلس على رجله اليسرى وينصب اليمنى) -->
+  <!-- Head -->
+  <circle cx="280" cy="130" r="24" fill="#F1EEE6" stroke="#174D3B" stroke-width="4"/>
+  
+  <!-- Upright spine in sitting tranquility -->
+  <path d="M270 170 L260 270 C260 285 280 295 320 295 L370 295" stroke="#174D3B" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Thighs & Knees -->
+  <path d="M260 270 L340 270 L345 295" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Hands resting flat on thighs near knees -->
+  <path d="M270 185 L320 250" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <ellipse cx="325" cy="255" rx="14" ry="7" fill="#FFFFFF" stroke="#26745A" stroke-width="3"/>
+
+  <!-- Foot Posture Highlight: Right foot erect, toes to Qiblah (نصب اليمنى وافتراش اليسرى) -->
+  <path d="M245 295 L235 270 L225 295" stroke="#B99A5B" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="210" y="255" fill="#B99A5B" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">نصب اليمنى</text>
+
+  <!-- Dhikr Callout: رب اغفر لي، رب اغفر لي -->
+  <rect x="150" y="45" width="300" height="34" rx="17" fill="#174D3B"/>
+  <text x="300" y="68" fill="#FFFFFF" font-family="'Noto Naskh Arabic', serif" font-size="15" font-weight="bold" text-anchor="middle">«رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي»</text>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">ركن من الأركان</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(180, 365)">
+    <rect width="240" height="38" rx="19" fill="#174D3B"/>
+    <text x="120" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الموضع ٦: الجلوس بين السجدتين</text>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Horizontal Straight Back Line Guide (استواء الظهر حتى لو صُب عليه ماء لاستقر) -->
+  <line x1="190" y1="180" x2="385" y2="180" stroke="#B99A5B" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="290" y="165" fill="#B99A5B" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">استواء الظهر مع الرأس</text>
+
+  <!-- Head in line with back (لم يشخص ولم يصوب) -->
+  <circle cx="195" cy="180" r="22" fill="#F1EEE6" stroke="#174D3B" stroke-width="4"/>
+
+  <!-- Back & Torso bent at 90 degrees -->
+  <path d="M215 180 L380 180 C395 180 405 190 400 215 L380 320" stroke="#174D3B" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Arms reaching straight down to knees -->
+  <!-- Hand grasping the knee firmly like a claw (قابضاً على ركبتيه مفرِّجاً أصابعه) -->
+  <path d="M250 185 L285 250" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Knee gripping highlight -->
+  <circle cx="288" cy="255" r="14" fill="#FFFFFF" stroke="#26745A" stroke-width="3"/>
+  <path d="M280 250 C290 245 298 250 295 262" stroke="#26745A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Legs standing straight without bending back knees excessively -->
+  <path d="M380 320 L370 320 L290 260 L320 335 L300 335" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Dhikr Banner: سبحان ربي العظيم (٣ مرات) -->
+  <rect x="160" y="45" width="280" height="34" rx="17" fill="#174D3B"/>
+  <text x="300" y="68" fill="#FFFFFF" font-family="'Noto Naskh Arabic', serif" font-size="15" font-weight="bold" text-anchor="middle">«سُبْحَانَ رَبِّيَ الْعَظِيمِ» (٣ مرات)</text>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">ركن من الأركان</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(195, 365)">
+    <rect width="210" height="38" rx="19" fill="#174D3B"/>
+    <text x="105" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الموضع ٣: الركوع والطمأنينة</text>
+  </g>
+</svg>

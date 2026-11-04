@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%" fill="none">
+  <rect width="600" height="450" rx="24" fill="#FAF9F5"/>
+  <rect x="20" y="20" width="560" height="410" rx="18" fill="#FFFFFF" stroke="#E7F0E9" stroke-width="2"/>
+  
+  <circle cx="300" cy="205" r="130" fill="#E7F0E9" opacity="0.7"/>
+
+  <!-- Standing figure silhouette in respectful minimal lines -->
+  <!-- Head bowed looking at place of prostration -->
+  <circle cx="300" cy="110" r="26" fill="#F1EEE6" stroke="#174D3B" stroke-width="4"/>
+  
+  <!-- Raised Hands to shoulder/ear level (حذو المنكبين أو فروع الأذنين) -->
+  <!-- Left Hand raised -->
+  <path d="M230 145 C230 115 240 100 248 100 C256 100 260 115 258 140 L275 180" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round" fill="#FFFFFF"/>
+  <!-- Right Hand raised -->
+  <path d="M370 145 C370 115 360 100 352 100 C344 100 340 115 342 140 L325 180" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round" fill="#FFFFFF"/>
+
+  <!-- Torso & Robe (Thobe) standing upright -->
+  <path d="M270 175 L260 300 L340 300 L330 175 Z" fill="#F1EEE6" stroke="#174D3B" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <!-- Feet parallel facing Qiblah without excessive widening -->
+  <path d="M275 300 L275 330 C275 335 270 338 260 338 L255 338" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M325 300 L325 330 C325 335 330 338 340 338 L345 338" stroke="#174D3B" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Takbir callout -->
+  <rect x="230" y="45" width="140" height="34" rx="17" fill="#174D3B"/>
+  <text x="300" y="68" fill="#FFFFFF" font-family="'Noto Naskh Arabic', serif" font-size="16" font-weight="bold" text-anchor="middle">«اللَّهُ أَكْبَرُ»</text>
+
+  <!-- Obligatory Marker Badge -->
+  <rect x="70" y="60" width="85" height="32" rx="16" fill="#174D3B"/>
+  <text x="112" y="81" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">ركن من الأركان</text>
+
+  <!-- Step Banner Badge -->
+  <g transform="translate(180, 365)">
+    <rect width="240" height="38" rx="19" fill="#174D3B"/>
+    <text x="120" y="24" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">الموضع ١: القيام وتكبيرة الإحرام</text>
+  </g>
+</svg>
